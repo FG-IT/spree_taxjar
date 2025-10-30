@@ -4,8 +4,8 @@ module SpreeTaxjar
       def self.prepended(base)
         base.include Taxable
 
-        state_machine = base.state_machines[:reimbursement_status]
-        state_machine.after_transition to: [:reimbursed], do: :remove_tax_for_returned_items
+        # state_machine = base.state_machines[:reimbursement_status]
+        # state_machine.after_transition to: [:reimbursed], do: :remove_tax_for_returned_items
       end
 
       def remove_tax_for_returned_items

@@ -4,9 +4,9 @@ module SpreeTaxjar
       def self.prepended(base)
         base.include Taxable
 
-        base.state_machine.after_transition to: :complete, do: :capture_taxjar
-        base.state_machine.after_transition to: :canceled, do: :delete_taxjar_transaction
-        base.state_machine.after_transition to: :resumed, from: :canceled, do: :capture_taxjar
+        # base.state_machine.after_transition to: :complete, do: :capture_taxjar
+        # base.state_machine.after_transition to: :canceled, do: :delete_taxjar_transaction
+        # base.state_machine.after_transition to: :resumed, from: :canceled, do: :capture_taxjar
       end
 
       private
